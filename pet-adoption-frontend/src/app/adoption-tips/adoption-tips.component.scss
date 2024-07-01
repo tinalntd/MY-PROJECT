@@ -1,0 +1,87 @@
+.adoption-tips {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+
+    button {
+      flex: 1;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        background: #5E7C87;  // Background color for the active tab
+        color: white;       // Font color for the active tab
+      }
+    }
+  }
+
+  .content {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #333;
+      border-left: 5px solid #5E7C87;
+      padding-left: 15px;
+      background: #f0f8f8;
+      padding: 15px;
+      border-radius: 5px;
+      font-style: italic;
+
+      &:before {
+        content: "“";
+        font-size: 2rem;
+        color: #5E7C87;
+      }
+
+      &:after {
+        content: "”";
+        font-size: 2rem;
+        color: #5E7C87;
+        float: right;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 15px;
+
+        strong {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        ul {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

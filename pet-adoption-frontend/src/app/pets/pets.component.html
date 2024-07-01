@@ -1,0 +1,33 @@
+<div class="pets-container">
+  <h1>Available Pets for Adoption</h1>
+
+  <div class="select-container">
+    <label for="pet-type-select">Select Pet Type:</label>
+    <select id="pet-type-select" [(ngModel)]="selectedPetType" name="petType" (change)="onPetTypeChange()">
+      <option value="">Select Pet Type</option>
+      <option *ngFor="let type of petTypes" [value]="type">{{ type | titlecase }}</option>
+    </select>
+  </div>
+
+  <div class="pets-list" *ngIf="selectedPetType">
+    <div class="no-pets-message" *ngIf="pets.length === 0">
+      <p>No pets available for adoption at the moment.</p>
+    </div>
+    <ul>
+      <li *ngFor="let pet of pets">
+        <img [src]="'assets/images/' + pet.image" [alt]="pet.name" />
+        <div class="pet-details">
+          <h2>{{ pet.name }}</h2>
+          <p>{{ pet.description }}</p>
+          <a 
+            class="adopt-button" 
+            [href]="'mailto:tinaleontidou@gmail.com?subject=Expressing interest to adopt ' + pet.name"
+            target="_blank"
+          >
+            Adopt {{ pet.name }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

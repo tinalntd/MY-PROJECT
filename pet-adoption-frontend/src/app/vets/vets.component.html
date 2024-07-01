@@ -1,0 +1,28 @@
+<div class="vets-container">
+  <h1>Vets near your area</h1>
+  
+  <!-- Vet Areas Dropdown -->
+  <div class="select-container">
+    <label for="area-select">Select Area:</label>
+    <select id="area-select" [(ngModel)]="selectedArea" name="area" (change)="onAreaChange()">
+      <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+    </select>
+  </div>
+  
+  <!-- Display Vets for Selected Area -->
+  <div class="vets-list" *ngIf="selectedArea">
+    <h2>Vets in {{ selectedArea }}</h2>
+    <ul>
+      <li *ngFor="let vet of vets">
+        <p><strong>Name:</strong> {{ vet.name }}</p>
+        <p><strong>Address:</strong> {{ vet.address }}</p>
+        <p><strong>Phone:</strong> {{ vet.phone }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Show message when no area is selected -->
+  <div class="no-area-message" *ngIf="!selectedArea">
+    <p>Please select an area to see the list of vets.</p>
+  </div>
+</div>

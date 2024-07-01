@@ -1,0 +1,23 @@
+<nav>
+  <div class="navbar-content">
+    <!-- Display user's name if available -->
+    <div *ngIf="firstName && lastName" class="welcome-container">
+      <span class="welcome-message">Welcome, {{ firstName }} {{ lastName }}!</span>
+      <button (click)="signOut()">Sign Out</button>
+    </div>
+    <!-- Navigation links for signed-out users -->
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/adoption-tips" routerLinkActive="active">Adoption Tips</a>
+    <a routerLink="/vets" routerLinkActive="active">Vets</a>
+    <ng-container *ngIf="!isSignedIn">
+      <a routerLink="/sign-in" routerLinkActive="active">Sign In</a>
+      <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+    </ng-container>
+    <!-- Navigation links for signed-in users -->
+    <ng-container *ngIf="isSignedIn">
+      <a routerLink="/pets" routerLinkActive="active">Pets</a>
+    </ng-container>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+

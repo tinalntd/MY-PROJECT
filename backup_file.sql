@@ -1,0 +1,84 @@
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+--
+-- Host: localhost    Database: pet_adoption
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'John','Doe','john.doe@example.com','123 Main St','1234567890','pbkdf2:sha256:600000$ws15oP7GMMXTsbxH$71ef69e77b14ca389e78abb87eda33b7373cd178d64bf31338820966c48e9310'),(2,'Jack','Doe','jack.doe@example.com','123 Main St','1234567890','pbkdf2:sha256:600000$OgFASNVFAdFpmkcf$119b8b5ae6b0a6c9d2c5f99249cb5bb06b32c5ffb2331d19f1c49f9ca97847a0'),(4,'Jack','Doe','jack.jackson@example.com','123 Main St','555-444-222','pbkdf2:sha256:600000$dYfqQMoqcf7Ff3EK$846d4c1600d315d3047690ed81ca7374a0d366065113c5b4de6a8a93f35cce84'),(5,'Jenny','Davidson','jenny.davidson@test.com','123 Main St','555-444-222','pbkdf2:sha256:600000$379vniVFdAgBgWod$a11e8ec361f172af6a63442bc6571171bc7fb6d3c9d83ac0a1627d9ae8162e63'),(6,'Jenny','Davidson','nick.johnson@test.com','123 Main St','555-444-222','pbkdf2:sha256:600000$ZLx2q27E3l8KOEU9$621e181df1264ebf758c263dd9132639bc2753bb20c52c1481778ea000f35cbb'),(7,'Jenny','Davidson','mary.manson@test.com','123 Main St','555-444-222','pbkdf2:sha256:600000$JGKrAbFHJvsApswq$b99e7e45bbd4bfe35b3f13abfe754a737f1acb872e963a9c1cef69a351a32d42'),(8,'nick','nick','nick.james@tst.com','123 Main St','555-444-222','pbkdf2:sha256:600000$hRGorTG0dBL1ypBP$996f8ab74e94081a6a4c656439bdae48284585ca4058584845a33f26074db8c9'),(9,'Chad','Dougy','chd@tester2.com','Everywhere','80787080','pbkdf2:sha256:600000$G0fYGrHavAmdtrKA$aa3ac12ab218a3413a98f0c3a2b09f49b0a90532ee56626da6b9f5d3244d3255'),(10,'Margot','Chrisson','margot.chrisson@tester3.com','Gotham City','7778889991010','pbkdf2:sha256:600000$lyeUfkzuMBN3tErR$c4f41372cb835c0bfb4582106b3c57a9af56942a3ae1d5bcacb6d47f4666a56f'),(11,'Tina','Leontidou','tinaleontidou@gmail.com','Kountouriou 117, Piraeus','6971552160','pbkdf2:sha256:600000$emAuPb8P3EhLhYUx$6d77f871a30a46f6a5a92cc8cf58a490f360dee587702bf8daa24a8a883eb43b'),(12,'Jacob','Jacoby','jjac@testmail.com','Anywhere','78080','pbkdf2:sha256:600000$luMFRkXPunknfKMn$506a6fb44982a6ed74d23b589e958a96b18c75dec46f19037a4d6c878f22cfa4'),(13,'Caroline','Jules','caroline.jules@fakemail.com','London','999-888-777','pbkdf2:sha256:600000$SEW1cPWBf5LciScO$9e9a7bd7cbba74f5467a06b247979a42e56dcca544863a17ea7d2f200e18e24f');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vets`
+--
+
+DROP TABLE IF EXISTS `vets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vets` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `area` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vets`
+--
+
+LOCK TABLES `vets` WRITE;
+/*!40000 ALTER TABLE `vets` DISABLE KEYS */;
+INSERT INTO `vets` VALUES (1,'VETERINARY CENTER OF PIRAEUS','GRIGORIOU LAMPRAKI 56','+30 21 10124251','PIRAEUS'),(2,'ELENI RAMANTANI','AKTI MOUTSOPOULOU','+30 210 4222222','PIRAEUS'),(3,'SMALL ANIMALS VET CARE','TRIFILIAS 45, ATHENS','+30 2294 333333','ATTIKI'),(4,'PETS VET CARE','MICHALACOPOULOU 100, ATHENS','+30 210 4444444','ATTIKI'),(5,'IASIS ZOON VETERINARY CLINIC','L.ALEKSANDRAS 56, ATHENS','+30 210 4555555','ATTIKI'),(6,'VET CENTER','ELEFTHERIOU VENIZELOU 8, TRIANDRIA','+30 231 553 4131','THESSALONIKI'),(7,'GEORGOPOULOU VASIA','KLAOUS 178, PATRA','+30 261 0643158','PATRA'),(8,'THEODORIKAKIS/GERAKAKIS','IGOUMENOU GAVRIIL 16, RETHYMNO','+30 283 105 1300','RETHYMNO'),(9,'VET CENTER OF LARISA','DIMOPOULOU 52, LARISA','+30 241 062 7550','LARISA'),(10,'GEORGE PAPADOPOULOS VET','ZISIMATOU 50, KOMOTINI','+30 252 422212','KOMOTINI'),(11,'VET FOR SMALL ANIMALS','AGION PANTON 5, IOANNINA','+30 2294 333333','IOANNINA'),(12,'VET CARE KORINTHOS','PATRON 11, KORINTHOS','+30 2741 023100','KORINTHOS'),(13,'IASIS ZOON','ZIVRAKAKIDON 41, CHANIA','+30 210 4555555','CHANIA'),(14,'SARIDAKIS','KONSTANTINIDI 20, IRAKLEIO','+30 2821 097 183','IRAKLIO'),(15,'PAGOURTZIS KONSTANTINOS','ELASONOS 39, VOLOS','+30 242 102 9694','VOLOS'),(16,'CHALKIOPOULOS NIKOLAOS','PALAIOKASTRITSAS 46, KERKYRA','+30 266 102 0101','KERKYRA');
+/*!40000 ALTER TABLE `vets` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-06-30 18:31:26

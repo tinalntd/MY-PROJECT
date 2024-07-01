@@ -1,0 +1,104 @@
+<div class="adoption-tips">
+    <div class="tabs">
+      <button (click)="selectTab('dogs')" [class.active]="selectedTab === 'dogs'">Dog Tips</button>
+      <button (click)="selectTab('cats')" [class.active]="selectedTab === 'cats'">Cat Tips</button>
+    </div>
+  
+    <div class="content">
+      <!-- Content for Dogs -->
+      <div *ngIf="selectedTab === 'dogs'">
+        <h2>Adoption Tips for Dogs</h2>
+        <p class="intro">
+          Pets are our best friends and companions. They bring joy, comfort, and love into our lives. When we decide to adopt a pet, we are making a lifelong commitment to care for them, nurture them, and make them a cherished part of our family. As the saying goes, “Your pet is part of your life, but for them, you are their whole life.” This responsibility requires us to be prepared and informed to ensure we provide the best home for our new furry friend.
+        </p>
+        <ul>
+          <li><strong>Understand the Breed’s Characteristics:</strong>
+            <ul>
+              <li>Research the breed’s temperament, exercise needs, and grooming requirements.</li>
+              <li>Check size and space requirements.</li>
+              <li>Be aware of any potential allergies to pet dander.</li>
+            </ul>
+          </li>
+          <li><strong>Prepare Your Home:</strong>
+            <ul>
+              <li>Dog-proof your space.</li>
+              <li>Create a safe space for your new dog.</li>
+              <li>Essential supplies: collar, leash, water and food bowls, toys, grooming supplies.</li>
+            </ul>
+          </li>
+          <li><strong>Training and Socialization:</strong>
+            <ul>
+              <li>Teach basic commands and use positive reinforcement.</li>
+              <li>Socialize your dog with different people, animals, and environments.</li>
+              <li>Consider professional obedience classes.</li>
+            </ul>
+          </li>
+          <li><strong>Health and Veterinary Care:</strong>
+            <ul>
+              <li>Schedule regular veterinary visits for check-ups and vaccinations.</li>
+              <li>Spay or neuter your dog.</li>
+              <li>Provide a healthy diet.</li>
+            </ul>
+          </li>
+          <li><strong>Exercise and Mental Stimulation:</strong>
+            <ul>
+              <li>Ensure daily exercise and provide mental stimulation.</li>
+              <li>Use puzzle toys or treat-dispensing toys.</li>
+            </ul>
+          </li>
+          <li><strong>Grooming:</strong>
+            <ul>
+              <li>Regular brushing, bathing, and nail trimming.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Content for Cats -->
+      <div *ngIf="selectedTab === 'cats'">
+        <h2>Adoption Tips for Cats</h2>
+        <p class="intro">
+          Pets are our best friends and companions. They bring joy, comfort, and love into our lives. When we decide to adopt a pet, we are making a lifelong commitment to care for them, nurture them, and make them a cherished part of our family. As the saying goes, “Your pet is part of your life, but for them, you are their whole life.” This responsibility requires us to be prepared and informed to ensure we provide the best home for our new furry friend.
+        </p>
+        <ul>
+          <li><strong>Understand Cat Behavior:</strong>
+            <ul>
+              <li>Learn about cat personalities and needs.</li>
+            </ul>
+          </li>
+          <li><strong>Prepare Your Home:</strong>
+            <ul>
+              <li>Cat-proof your space.</li>
+              <li>Create a cat-friendly environment with a bed, scratching posts, and toys.</li>
+              <li>Essential supplies: litter box, food and water bowls, scratching post, toys.</li>
+            </ul>
+          </li>
+          <li><strong>Training and Socialization:</strong>
+            <ul>
+              <li>Ensure proper litter box training and use positive reinforcement.</li>
+              <li>Engage in interactive play with your cat.</li>
+            </ul>
+          </li>
+          <li><strong>Health and Veterinary Care:</strong>
+            <ul>
+              <li>Schedule regular vet visits for vaccinations and check-ups.</li>
+              <li>Spay or neuter your cat.</li>
+              <li>Feed a balanced diet.</li>
+            </ul>
+          </li>
+          <li><strong>Grooming:</strong>
+            <ul>
+              <li>Regular brushing and nail trimming.</li>
+              <li>Provide dental care.</li>
+            </ul>
+          </li>
+          <li><strong>Enrichment:</strong>
+            <ul>
+              <li>Provide toys, vertical space, and scratching posts for enrichment.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

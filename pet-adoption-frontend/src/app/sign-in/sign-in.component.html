@@ -1,0 +1,14 @@
+<div class="sign-in-container">
+  <h1>Sign In</h1>
+  <form (ngSubmit)="onSubmit()" #signInForm="ngForm">
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" [(ngModel)]="signInFormData.email" required />
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" name="password" type="password" [(ngModel)]="signInFormData.password" required />
+    </div>
+    <button type="submit">Sign In</button>
+  </form>
+</div>
